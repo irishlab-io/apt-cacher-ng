@@ -1,0 +1,31 @@
+---
+version: '3'
+
+vars:
+  PROJECT_DIR:
+    sh: "git rev-parse --show-toplevel"
+  ANSIBLE_DIR: "{{.PROJECT_DIR}}/ansible"
+  CLUSTER_DIR: "{{.PROJECT_DIR}}/clusters"
+  TERRAFORM_DIR: "{{.PROJECT_DIR}}/terraform"
+
+includes:
+  ansible: .taskfiles/ansible.yml
+  flux: .taskfiles/flux.yml
+  pre-commit: .taskfiles/pre-commit.yml
+  terraform: .taskfiles/terraform.yml
+
+tasks:
+
+  kubeconfig:
+    desc: Remotely fetch kubeconfig from k3s
+    cmds:
+      - rsync --verbose --progress --partial --rsync-path="sudo rsync" ubuntu@10.75.40.10:/etc/rancher/k3s/k3s.yaml ./kubeconfig
+      - sed -i '' 's/127.0.0.1/10.75.45.5/g' ./kubeconfig
+      - chmod go-r kubeconfig
+    silent: true
+
+  update:
+    desc: Update & Upgrade
+    cmds:
+      - sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean -y
+    silent: true
