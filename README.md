@@ -9,6 +9,8 @@
 
 Apt-Cacher NG is a caching proxy, specialized for package files from Linux distributors, primarily for [Debian](http://www.debian.org/) (and [Debian based](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based)) distributions such as [Ubuntu family](https://ubuntu.com/) but not limited to those.
 
+It was difficult to find an ARM64 container for this workload which is why I am building this myself.
+2
 ## Getting started
 
 Docker containers are available on [Github Container Registry](https://github.com/irish1986?tab=packages) and is the recommended method of installation.
