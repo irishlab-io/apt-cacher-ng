@@ -1,20 +1,9 @@
-# irish1986/docker-apt-cacher-ng
+# irish1986/apt-cacher-ng
 
 - [Introduction](#introduction)
-  - [Contributing](#contributing)
-  - [Issues](#issues)
+- [Contributing](#contributing)
 - [Getting started](#getting-started)
-  - [Installation](#installation)
-  - [Quickstart](#quickstart)
-  - [Command-line arguments](#command-line-arguments)
-  - [Persistence](#persistence)
-  - [Docker Compose](#docker-compose)
-  - [Usage](#usage)
-  - [Logs](#logs)
-- [Maintenance](#maintenance)
-  - [Cache expiry](#cache-expiry)
-  - [Upgrading](#upgrading)
-  - [Shell Access](#shell-access)
+- [Hiearchy](#hiearchy)
 
 ## Introduction
 
