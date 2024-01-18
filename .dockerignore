@@ -1,7 +1,11 @@
+.config
 .git
-circle.yml
-LICENSE
-VERSION
+.github
+.taskfiles
+.vscode
+.gitignore
+.pre-commit-config.yaml
+CODE_OF_CONDUCT.md
 README.md
-Changelog.md
-Makefile
+SECURITY.md
+Taskfile.yml
