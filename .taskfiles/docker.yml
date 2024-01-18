@@ -6,7 +6,7 @@ tasks:
   auth:
     desc: Build docker container
     cmds:
-      - docker push ghcr.oi/irish1986/apt-cacher-ng
+      - echo $GHCR_TOKEN | docker login ghcr.io -u $GHCR_USER --password-stdin
 
   build:
     desc: Build docker container
@@ -16,9 +16,9 @@ tasks:
   tag:
     desc: Build docker container
     cmds:
-      - docker tag irish1986/apt-cacher-ng ghcr.oi/irish1986/apt-cacher-ng:manual
+      - docker tag irish1986/apt-cacher-ng ghcr.io/irish1986/apt-cacher-ng:local
 
   push:
     desc: Build docker container
     cmds:
-      - docker push ghcr.oi/irish1986/apt-cacher-ng
+      - docker push ghcr.io/irish1986/apt-cacher-ng
