@@ -3,7 +3,22 @@ version: "3"
 
 tasks:
 
+  auth:
+    desc: Build docker container
+    cmds:
+      - docker push ghcr.oi/irish1986/apt-cacher-ng
+
   build:
     desc: Build docker container
     cmds:
       - docker build --tag=irish1986/apt-cacher-ng .
+
+  tag:
+    desc: Build docker container
+    cmds:
+      - docker tag irish1986/apt-cacher-ng ghcr.oi/irish1986/apt-cacher-ng:manual
+
+  push:
+    desc: Build docker container
+    cmds:
+      - docker push ghcr.oi/irish1986/apt-cacher-ng

@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Apt-Cacher NG is a caching proxy, specialized for package files from Linux distributors, primarily for [Debian](http://www.debian.org/) (and [Debian based](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based)) distributions such as [Ubuntu family](https://ubuntu.com/)but not limited to those.
+Apt-Cacher NG is a caching proxy, specialized for package files from Linux distributors, primarily for [Debian](http://www.debian.org/) (and [Debian based](https://en.wikipedia.org/wiki/List_of_Linux_distributions#Debian-based)) distributions such as [Ubuntu family](https://ubuntu.com/) but not limited to those.
 
 ## Getting started
 
