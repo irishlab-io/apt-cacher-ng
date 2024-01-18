@@ -1,0 +1,9 @@
+---
+version: "3"
+
+tasks:
+
+  build:
+    desc: Build docker container
+    cmds:
+      - docker build --tag=irish1986/apt-cacher-ng .
