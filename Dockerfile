@@ -1,4 +1,4 @@
-FROM ubuntu:jammy-20240111
+FROM ubuntu:jammy-20240212
 # org.opencontainers.image.source = "https://github.com/irish1986/apt-cacher-ng"
 
 LABEL maintainer="https://github.com/irish1986"
