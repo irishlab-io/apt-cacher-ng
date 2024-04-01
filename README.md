@@ -22,7 +22,7 @@ If you find this image useful here's how you can help:
 - Send a pull request with your awesome features and bug fixes
 - Help users resolve their [issues](../../issues?q=is%3Aopen+is%3Aissue).
 
-## Hiearchy
+## Hierarchy
 
 I had been a contributor and maintaineer of [sameersbn/apt-cacher-ng](https://github.com/sameersbn/docker-apt-cacher-ng) for a while but the project seems not to received the right level of commitment for it owner.  Being a secondary maintainer means I had limited access to a few topics that irritated me.  Thanks for your help and support on this project, I am forking (and restarting) this project on my own.
 
