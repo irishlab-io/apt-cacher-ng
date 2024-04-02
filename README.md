@@ -1,4 +1,4 @@
-# irish1986/apt-cacher-ng
+# irishlab.io/apt-cacher-ng
 
 - [Introduction](#introduction)
 - [Contributing](#contributing)
