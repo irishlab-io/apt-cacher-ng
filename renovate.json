@@ -1,6 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
+    "extends": [
+    ":disableRateLimiting",
+    "docker:enableMajor",
+    ":timezone(America/New_York)",
+    ":semanticCommits",
     "config:recommended"
-  ]
+  ],
+  "pre-commit": {
+    "enabled": true
+  }
 }
