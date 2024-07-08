@@ -10,4 +10,6 @@ on: # yamllint disable-line rule:truthy
 jobs:
   reuse:
     uses: irishlab-io/pipelines/.github/workflows/reuse.yml@main
+  secret:
+    uses: irishlab-io/pipelines/.github/workflows/secret.yml@main
     secrets: inherit
