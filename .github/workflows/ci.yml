@@ -9,12 +9,21 @@ on: # yamllint disable-line rule:truthy
 
 jobs:
   reuse:
-    uses: irishlab-io/pipelines/.github/workflows/reuse.yml@main
+    uses: irishlab-io/pipelines/generic/reuse.yml@main
+
   secret:
-    uses: irishlab-io/pipelines/.github/workflows/secret.yml@main
+    uses: irishlab-io/pipelines/generic/secret.yml@main
+    needs:
+      - reuse
     secrets: inherit
+
+  pre-commit:
+    uses: irishlab-io/pipelines/generic/pre-commit.yml@main
+    needs:
+        - reuse
+
   docker-build:
-    uses: irishlab-io/pipelines/.github/workflows/docker-build.yml@main
+    uses: irishlab-io/pipelines/generic/docker-build.yml@main
     needs:
       - reuse
       - secret
