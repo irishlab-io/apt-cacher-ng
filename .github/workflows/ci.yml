@@ -18,12 +18,13 @@ jobs:
     secrets: inherit
 
   pre-commit:
-    uses: irishlab-io/pipelines/.github/workflows/secret.yml@main
+    uses: irishlab-io/pipelines/.github/workflows/pre-commit.yml@main
     needs:
         - reuse
 
   docker-build:
     uses: irishlab-io/pipelines/.github/workflows/docker-build.yml@main
     needs:
+      - pre-commit
       - reuse
       - secret
