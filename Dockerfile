@@ -1,9 +1,7 @@
 FROM ubuntu:noble-20240605
 
-LABEL org.opencontainers.image.source = "https://github.com/irishlab.io/apt-cacher-ng"
-LABEL org.opencontainers.image.description "Docker Apt-Cacher NG"
-
-LABEL maintainer="https://github.com/irish1986"
+LABEL org.opencontainers.image.source="https://github.com/irishlab.io/apt-cacher-ng"
+LABEL org.opencontainers.image.description="Docker Apt-Cacher NG"
 
 ENV APT_CACHER_NG_VERSION=3.7.4 \
     APT_CACHER_NG_CACHE_DIR=/var/cache/apt-cacher-ng \
