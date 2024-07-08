@@ -1,5 +1,5 @@
 FROM ubuntu:noble-20240605
-# org.opencontainers.image.source = "https://github.com/irish1986/apt-cacher-ng"
+LABEL org.opencontainers.image.source = "https://github.com/irishlab.io/apt-cacher-ng"
 
 LABEL maintainer="https://github.com/irish1986"
 
