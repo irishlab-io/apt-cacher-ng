@@ -8,5 +8,6 @@ on: # yamllint disable-line rule:truthy
       - main
 
 jobs:
-  call-workflow-passing-data:
+  reuse:
     uses: irishlab-io/pipelines/.github/workflows/reuse.yml@main
+    secrets: inherit
