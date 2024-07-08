@@ -17,11 +17,12 @@ concurrency:
 
 jobs:
   secret:
+    name: Call GG Shield
     uses: irishlab-io/pipelines/.github/workflows/reusable-ggshield.yml@main
     secrets: inherit
 
   pre-commit:
-    name: Call Docker Build
+    name: Call Pre-Commit
     uses: irishlab-io/pipelines/.github/workflows/reusable-pre-commit.yml@main
 
   call-docker-build:
@@ -50,4 +51,3 @@ jobs:
         type=ref,event=pr,priority=100
       platforms: linux/amd64
       comment-enable: true
-      
