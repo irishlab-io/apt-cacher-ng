@@ -13,3 +13,6 @@ jobs:
   secret:
     uses: irishlab-io/pipelines/.github/workflows/secret.yml@main
     secrets: inherit
+  docker-build:
+    uses: irishlab-io/pipelines/.github/workflows/secret.yml@main
+    secrets: inherit
