@@ -3,12 +3,6 @@ name: Continous Integration
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches:
-      - main
-    paths-ignore:
-      - '**/README.md'
-    tags:
-      - 'v*.*.*'
   pull_request:
     branches:
       - main
