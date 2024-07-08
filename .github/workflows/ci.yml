@@ -49,5 +49,5 @@ jobs:
         type=raw,value=latest,enable={{is_default_branch}},priority=100
         type=raw,value=gha-${{ github.run_id }},enable=${{github.event_name == 'pull_request'}},priority=200
         type=ref,event=pr,priority=100
-      platforms: linux/amd64
+      platforms: linux/amd64,linux/arm64/v8
       comment-enable: true
