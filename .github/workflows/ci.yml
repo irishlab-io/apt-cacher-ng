@@ -15,3 +15,6 @@ jobs:
     secrets: inherit
   docker-build:
     uses: irishlab-io/pipelines/.github/workflows/docker-build.yml@main
+    needs:
+      - reuse
+      - secret
