@@ -1,7 +1,7 @@
 ---
-name: Continous Integration
+name: Docker Build
 
-on: # yamllint disable-line rule:truthy
+on:
   push:
     branches:
       - main
@@ -16,21 +16,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  secret:
-    uses: irishlab-io/pipelines/.github/workflows/reusable-ggshield.yml@main
-    secrets: inherit
-
-  pre-commit:
-    name: Call Docker Build
-    uses: irishlab-io/pipelines/.github/workflows/reusable-pre-commit.yml@main
-
   call-docker-build:
     name: Call Docker Build
-
-    needs:
-      - pre-commit
-      - secret
-
     uses: irishlab-io/pipelines/.github/workflows/reusable-docker-build.yml@main
 
     permissions:
@@ -51,4 +38,3 @@ jobs:
       context: "{{defaultContext}}"
       platforms: linux/amd64
       comment-enable: true
-      
