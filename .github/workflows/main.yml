@@ -28,7 +28,9 @@
         - secret
 
       permissions:
+        attestations: write
         contents: read
+        id-token: write
         packages: write
         pull-requests: write
 
