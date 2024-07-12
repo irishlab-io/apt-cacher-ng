@@ -2,6 +2,7 @@
 fail_fast: false
 ci:
   skip:
+    - docker-compose-check
     - ggshield
   autoupdate_schedule: monthly
 repos:
