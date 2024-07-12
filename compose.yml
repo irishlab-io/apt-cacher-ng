@@ -1,22 +1,30 @@
 ---
 name: apt-cacher-ng
 
-networks:
-  proxy:
-    external: true
+# networks:
+#   proxy:
+#     external: true
 
 services:
   apt-cacher-ng:
+    init: true
     container_name: apt-cacher-ng
     image: ghcr.io/irishlab-io/apt-cacher-ng:latest
     pull_policy: always
     env_file: .env
     restart: unless-stopped
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.cacher.entrypoints=https"
-      - "traefik.http.routers.cacher.rule=Host(`${APT-CACHER-NG-DOMAIN}`)"
-      - "traefik.http.routers.cacher.tls=true"
-      - "traefik.http.services.cacher.loadbalancer.server.port=3142"
-    networks:
-      - proxy
+    environment:
+      - TZ=${TIMEZONE}
+    network_mode: bridge
+    ports:
+      - "3142:3142"
+    volumes:
+      - ./apt-cacher-ng:/var/cache/apt-cacher-ng
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.cacher.entrypoints=https"
+    #   - "traefik.http.routers.cacher.rule=Host(`${APT-CACHER-NG-DOMAIN}`)"
+    #   - "traefik.http.routers.cacher.tls=true"
+    #   - "traefik.http.services.cacher.loadbalancer.server.port=3142"
+    # networks:
+    #   - proxy
