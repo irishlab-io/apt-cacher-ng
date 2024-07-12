@@ -1,8 +1,16 @@
 ---
 fail_fast: false
 ci:
+  skip:
+    - ggshield
   autoupdate_schedule: monthly
 repos:
+  - repo: https://github.com/gitguardian/ggshield
+    rev: v1.29.0
+    hooks:
+      - id: ggshield
+        language_version: python3
+        stages: [commit]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
