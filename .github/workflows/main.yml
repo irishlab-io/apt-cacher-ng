@@ -20,29 +20,3 @@ jobs:
     name: Call GG Shield
     uses: irishlab-io/pipelines/.github/workflows/reusable-ggshield.yml@main
     secrets: inherit
-
-  call-docker-build:
-    name: Call Docker Build
-
-    needs:
-      - secret
-
-    permissions:
-      contents: read
-      packages: write
-      pull-requests: write
-      security-events: write
-
-    uses: irishlab-io/pipelines/.github/workflows/reusable-docker-build.yml@main
-    with:
-      ghcr-enable: true
-      image-names: |
-        ghcr.io/${{ github.repository }}
-      tag-rules: |
-        type=raw,value=stable-{{date 'YYYYMMDD'}}-{{sha}},enable={{is_default_branch}},priority=300
-        type=ref,event=tag,priority=200
-        type=raw,value=latest,enable={{is_default_branch}},priority=100
-        type=raw,value=gha-${{ github.run_id }},enable=${{github.event_name == 'pull_request'}},priority=200
-        type=ref,event=pr,priority=100
-      platforms: linux/amd64,linux/arm64
-      comment-enable: true
