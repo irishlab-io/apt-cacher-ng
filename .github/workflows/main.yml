@@ -1,5 +1,5 @@
 ---
-name: Continous Integration
+name: Continous Integration - Main
 
 on: # yamllint disable-line rule:truthy
   push:
@@ -21,24 +21,18 @@ jobs:
     uses: irishlab-io/pipelines/.github/workflows/reusable-ggshield.yml@main
     secrets: inherit
 
-  pre-commit:
-    name: Call Pre-Commit
-    uses: irishlab-io/pipelines/.github/workflows/reusable-pre-commit.yml@main
-
   call-docker-build:
     name: Call Docker Build
 
     needs:
-      - pre-commit
       - secret
-
-    uses: irishlab-io/pipelines/.github/workflows/reusable-docker-build.yml@main
 
     permissions:
       contents: read
-      packages: write # needed to push docker image to ghcr.io
-      pull-requests: write # needed to create and update comments in PRs
+      packages: write
+      pull-requests: write
 
+    uses: irishlab-io/pipelines/.github/workflows/reusable-docker-build.yml@main
     with:
       ghcr-enable: true
       image-names: |
