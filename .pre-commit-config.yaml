@@ -2,6 +2,7 @@
 fail_fast: false
 ci:
   skip:
+    - docker-compose-check
     - ggshield
   autoupdate_schedule: monthly
 repos:
@@ -60,6 +61,10 @@ repos:
         args:
           - -c
           - .config/.yamllint.yml
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
   - repo: https://github.com/iamthefij/docker-pre-commit
     rev: v3.0.1
     hooks:
