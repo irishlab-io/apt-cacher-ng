@@ -1,11 +1,6 @@
 .config
 .git
 .github
-.taskfiles
 .vscode
 .gitignore
 .pre-commit-config.yaml
-CODE_OF_CONDUCT.md
-README.md
-SECURITY.md
-Taskfile.yml
