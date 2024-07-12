@@ -28,10 +28,12 @@ repos:
     hooks:
       - id: remove-crlf
       - id: remove-tabs
-  - repo: https://github.com/sirosen/fix-smartquotes
-    rev: 0.2.0
+  - repo: https://github.com/sirosen/texthooks
+    rev: 0.6.6
     hooks:
+      - id: alphabetize-codeowners
       - id: fix-smartquotes
+      - id: fix-ligatures
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.35.1
     hooks:
