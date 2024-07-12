@@ -1,0 +1,49 @@
+---
+repository:
+  name: apt-cacher-ng
+  description: An implementation of apt-cacher-ng in docker for AMD64 and ARM64
+  homepage: https://apt-cacher-ng.irishlab.io/
+  allow_auto_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  allow_squash_merge: true
+  allow_update_branch: true
+  auto_init: true
+  default_branch: main
+  delete_branch_on_merge: true
+  enable_automated_security_fixes: true
+  enable_vulnerability_alerts: true
+  has_downloads: false
+  has_issues: true
+  has_projects: false
+  has_wiki: false
+  is_template: false
+  license_template: mit
+  private: false
+  security:
+    enableVulnerabilityAlerts: true
+    enableAutomatedSecurityFixes: true
+  security_and_analysis:
+    secret_scanning:
+      status: enabled
+    secret_scanning_push_protection:
+      status: enabled
+
+rulesets:
+  - name: main
+    target: branch
+    enforcement: active
+    conditions:
+      ref_name:
+        include: ["~DEFAULT_BRANCH"]
+    rules:
+      - type: deletion
+      - type: pull_request
+        parameters:
+          dismiss_stale_reviews_on_push: false
+          require_code_owner_review: false
+          require_last_push_approval: false
+          required_approving_review_count: 1
+          required_review_thread_resolution: false
+      - type: required_linear_history
+      - type: required_signatures
