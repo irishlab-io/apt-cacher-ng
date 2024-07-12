@@ -53,14 +53,14 @@ repos:
       - id: markdownlint
         args:
           - --config
-          - .config/.markdownlint.yml
+          - .config/.markdown-lint.yml
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.35.1
     hooks:
       - id: yamllint
         args:
           - -c
-          - .config/.yamllint.yml
+          - .config/.yaml-lint.yml
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.10.0.1
     hooks:
