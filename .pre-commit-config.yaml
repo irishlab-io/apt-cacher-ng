@@ -7,7 +7,7 @@ ci:
   autoupdate_schedule: monthly
 repos:
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.29.0
+    rev: v1.31.0
     hooks:
       - id: ggshield
         language_version: python3
@@ -42,7 +42,7 @@ repos:
       - id: remove-crlf
       - id: remove-tabs
   - repo: https://github.com/sirosen/texthooks
-    rev: 0.6.6
+    rev: 0.6.7
     hooks:
       - id: alphabetize-codeowners
       - id: fix-smartquotes
